@@ -1,4 +1,4 @@
-export default function IngredientList({ meal }: { meal: Record<string, any> }) {
+export default function IngredientList({ meal }: { meal: Record<string, string | undefined | null> }) {
   // Extract ingredients and measures
   const ingredients = [];
   for (let i = 1; i <= 20; i++) {
