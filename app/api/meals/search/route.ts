@@ -13,7 +13,7 @@ export async function GET(request: NextRequest) {
     if (!res.ok) throw new Error("API response not OK");
     const data = await res.json();
     return NextResponse.json(data);
-  } catch (error) {
+  } catch (_error) {
     return NextResponse.json({ error: "Failed to fetch meals" }, { status: 500 });
   }
 }

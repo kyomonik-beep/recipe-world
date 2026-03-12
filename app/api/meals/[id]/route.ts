@@ -9,7 +9,7 @@ export async function GET(
     if (!res.ok) throw new Error("API response not OK");
     const data = await res.json();
     return NextResponse.json(data);
-  } catch {
+  } catch (_error) {
     return NextResponse.json({ error: "Failed to fetch meal" }, { status: 500 });
   }
 }

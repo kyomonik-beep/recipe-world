@@ -16,7 +16,7 @@ export async function GET(request: NextRequest) {
     if (!res.ok) throw new Error("API response not OK");
     const data = await res.json();
     return NextResponse.json(data);
-  } catch {
+  } catch (_error) {
     return NextResponse.json({ error: "Failed to fetch filtered meals" }, { status: 500 });
   }
 }
