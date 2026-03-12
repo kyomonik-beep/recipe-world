@@ -1,6 +1,5 @@
 "use client";
 
-import CategoryGrid from "@/components/home/CategoryGrid";
 import BlobBackground from "@/components/ui/BlobBackground";
 
 export default function CategoryIndexPage() {
@@ -37,6 +36,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
+interface Category {
+  idCategory: string;
+  strCategory: string;
+  strCategoryThumb: string;
+}
+
 function AllCategoriesGrid() {
   const { data, isLoading } = useQuery({
     queryKey: ["categories"],
@@ -53,11 +58,11 @@ function AllCategoriesGrid() {
     );
   }
 
-  const categories = data?.categories || [];
+  const categories: Category[] = data?.categories || [];
 
   return (
     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-      {categories.map((category: any) => (
+      {categories.map((category) => (
         <Link
           key={category.idCategory}
           href={`/category/${category.strCategory}`}

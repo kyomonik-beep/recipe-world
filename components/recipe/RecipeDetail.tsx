@@ -2,7 +2,6 @@
 
 import { useQuery } from "@tanstack/react-query";
 import { getMealDetails } from "@/lib/meals";
-import LoadingSkeleton from "@/components/ui/LoadingSkeleton";
 import Image from "next/image";
 import { ArrowLeft, Play, MapPin } from "lucide-react";
 import Link from "next/link";
@@ -39,7 +38,7 @@ export default function RecipeDetail({ id }: { id: string }) {
   if (!meal || error) {
     return (
       <div className="max-w-2xl mx-auto px-4 py-32 text-center text-muted-foreground font-body">
-        Sorry, we couldn't find the details for this recipe.
+        Sorry, we couldn&apos;t find the details for this recipe.
       </div>
     );
   }

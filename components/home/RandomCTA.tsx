@@ -33,7 +33,7 @@ export default function RandomCTA() {
           </h2>
           
           <p className="font-body text-muted-foreground text-lg mb-8 leading-relaxed">
-            Discover something completely new. Our "Feeling Lucky" feature pulls a random, authentic recipe from around the world just for you.
+            Discover something completely new. Our &quot;Feeling Lucky&quot; feature pulls a random, authentic recipe from around the world just for you.
           </p>
           
           <button 

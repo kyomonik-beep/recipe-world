@@ -1,6 +1,4 @@
-import { MealData } from "./RecipeCard";
-
-export default function IngredientList({ meal }: { meal: any }) {
+export default function IngredientList({ meal }: { meal: Record<string, any> }) {
   // Extract ingredients and measures
   const ingredients = [];
   for (let i = 1; i <= 20; i++) {

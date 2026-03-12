@@ -6,13 +6,17 @@ import Link from "next/link";
 import { MapPin } from "lucide-react";
 import BlobBackground from "@/components/ui/BlobBackground";
 
+interface Area {
+  strArea: string;
+}
+
 export default function AreaIndexPage() {
   const { data, isLoading } = useQuery({
     queryKey: ["areas"],
     queryFn: getAreas,
   });
 
-  const areas = data?.meals || [];
+  const areas: Area[] = data?.meals || [];
 
   return (
     <div className="relative min-h-screen py-12">
@@ -36,7 +40,7 @@ export default function AreaIndexPage() {
           </div>
         ) : (
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
-            {areas.map((area: any) => (
+            {areas.map((area) => (
               <Link
                 key={area.strArea}
                 href={`/area/${area.strArea}`}

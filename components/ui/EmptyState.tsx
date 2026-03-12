@@ -1,7 +1,6 @@
 "use client";
 
 import { ChefHat } from "lucide-react";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 export default function EmptyState() {
@@ -18,7 +17,7 @@ export default function EmptyState() {
       </h3>
       
       <p className="font-body text-muted-foreground mb-10 leading-relaxed">
-        We couldn't find any recipes matching your search. Try adjusting your ingredients or cuisine.
+        We couldn&apos;t find any recipes matching your search. Try adjusting your ingredients or cuisine.
       </p>
 
       <button 

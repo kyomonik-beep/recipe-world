@@ -6,6 +6,12 @@ import RecipeCard from "@/components/recipe/RecipeCard";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
+interface Meal {
+  idMeal: string;
+  strMeal: string;
+  strMealThumb: string;
+}
+
 export default function FeaturedRecipes() {
   // Let's just fetch popular letter "b" or "c" representing featured meals. 
   // Free meal APi doesn't have "featured" endpoints without a key.
@@ -14,7 +20,7 @@ export default function FeaturedRecipes() {
     queryFn: () => searchMeals("b"),
   });
 
-  const meals = data?.meals?.slice(0, 4) || [];
+  const meals: Meal[] = data?.meals?.slice(0, 4) || [];
 
   return (
     <section>
@@ -43,7 +49,7 @@ export default function FeaturedRecipes() {
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {meals.map((meal: any, idx: number) => (
+          {meals.map((meal, idx) => (
             <RecipeCard key={meal.idMeal} meal={meal} index={idx} />
           ))}
         </div>
